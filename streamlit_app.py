@@ -14,7 +14,7 @@ if "authenticated" not in st.session_state:
 if "session_ended" not in st.session_state:
     st.session_state.session_ended = False
 if "stored_pin" not in st.session_state:
-    st.session_state.stored_pin = "1234"   # Default PIN for demo
+    st.session_state.stored_pin = "0000"   # Default PIN for demo
 
 if "entered_pin" not in st.session_state:
     st.session_state.entered_pin = ""
@@ -24,26 +24,26 @@ st.markdown("""
 <style>
     .atm-box {
         background-color: #E8F1FF;
-        padding: 25px;
-        border-radius: 15px;
+        padding: 20px;
+        border-radius: 10px;
         border: 2px solid #BFD7FF;
         box-shadow: 0px 4px 12px #c8d9f0;
     }
     .title {
         text-align: center;
-        font-size: 32px;
+        font-size: 25px;
         font-weight: bold;
         color: #0A6EBD;
     }
     .pin-display {
-        font-size: 32px;
+        font-size: 25px;
         letter-spacing: 18px;
         text-align: center;
         padding: 10px;
         border: 2px solid #0A6EBD;
         border-radius: 10px;
         background: white;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     .key-btn {
         width: 90px !important;
@@ -56,7 +56,7 @@ st.markdown("""
     .key-btn-red {
         width: 90px !important;
         height: 70px !important;
-        font-size: 24px !important;
+        font-size: 18px !important;
         background-color: #CB2D3E !important;
         color: white !important;
         border-radius: 10px !important;
@@ -102,7 +102,7 @@ if st.session_state.session_ended:
 # LOGIN PAGE
 
 if not st.session_state.authenticated:
-    st.markdown("<h1 class='title'>Enter Your 4-Digit PIN</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='title'>Enter Your 4-Digits PIN To Continue</h1>", unsafe_allow_html=True)
     st.markdown("<div class='atm-box'>", unsafe_allow_html=True)
 
     pressed = keypad()
