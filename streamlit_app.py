@@ -84,13 +84,13 @@ def keypad():
     if col1.button("Clear", key="clear", use_container_width=True):
         st.session_state.entered_pin = ""
 
-if col2.button("0", key="zero", use_container_width=True):
-    st.warning("Digit '0' not allowed in PIN!")
-
-if col3.button("Enter", key="enter", use_container_width=True):
-    return True
-
-return False
+    if col2.button("0", key="zero", use_container_width=True):
+        st.warning("Digit '0' not allowed in PIN!")
+    
+    if col3.button("Enter", key="enter", use_container_width=True):
+        return True
+    
+    return False
 
 # SESSION ENDED
 if st.session_state.session_ended:
