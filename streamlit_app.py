@@ -40,6 +40,6 @@ elif option == "Exit":
         st.session_state.balance = 1000
         st.warning("Session ended. Balance reset to ₦1000.")
         st.session_state.session_ended = True
-        st.success("Thank you for using Joe Farad ATM.")
+        st.success("Goodbye!")
         st.stop()
         
