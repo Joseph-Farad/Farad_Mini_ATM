@@ -14,7 +14,7 @@ if "authenticated" not in st.session_state:
 if "session_ended" not in st.session_state:
     st.session_state.session_ended = False
 if "stored_pin" not in st.session_state:
-    st.session_state.stored_pin = "0000"   # Default PIN for demo
+    st.session_state.stored_pin = "1234"   # Default PIN for demo
 
 if "entered_pin" not in st.session_state:
     st.session_state.entered_pin = ""
@@ -67,7 +67,7 @@ st.markdown("""
 def is_valid_pin(pin):
     return len(pin) == 4 and pin.isdigit()
     
-    #return len(pin) == 4 and pin.isdigit() and all(d in "123456789" for d in pin)
+    return len(pin) == 4 and pin.isdigit() and all(d in "123456789" for d in pin)
 
 # TOUCHSCREEN NUMBER KEYPAD
 def keypad():
