@@ -1,10 +1,12 @@
 import streamlit as st
 
-st.title('JOE FARAD MINI ATM')
 st.set_page_config(page_title="JOE FARAD MINI ATM", page_icon="💳", layout="centered")
+st.title("JOE FARAD MINI ATM")
 
 st.write("Welcome to Joe Farad ATM")
+
 # --- Initialize balance in session state ---
+
 if "balance" not in st.session_state:
     st.session_state.balance = 1000
 if "authenticated" not in st.session_state:
@@ -63,7 +65,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 def is_valid_pin(pin):
-    return len(pin) == 4 and pin.isdigit() and all(d in "123456789" for d in pin)
+    return len(pin) == 4 and pin.isdigit()
+    
+    #return len(pin) == 4 and pin.isdigit() and all(d in "123456789" for d in pin)
 
 # TOUCHSCREEN NUMBER KEYPAD
 def keypad():
@@ -77,8 +81,6 @@ def keypad():
         if col1.button(num, key=f"k{num}", help="Enter PIN", use_container_width=True):
             if len(st.session_state.entered_pin) < 4:
                 st.session_state.entered_pin += num
-
-        num2 = str(int(num)+1) if num != "9" else None
 
     col1, col2, col3 = st.columns(3)
     if col1.button("Clear", key="clear", use_container_width=True):
@@ -110,20 +112,18 @@ if not st.session_state.authenticated:
         if not is_valid_pin(pin):
             st.error("OOps! Invalid PIN, Please try again.")
             st.session_state.entered_pin = ""
+            st.markdown("</div>", unsafe_allow_html=True)
             st.stop()
-    if pin == st.session_state.stored_pin:
+            
+        if pin == st.session_state.stored_pin:
             st.success("PIN correct! Access granted")
             st.session_state.authenticated = True
             st.session_state.entered_pin = ""
-    if pin == st.session_state.stored_pin:
-        st.success("PIN correct! Access granted ✔")
-        st.session_state.authenticated = True
-        st.session_state.entered_pin = ""
-    else:
-        st.error("Wrong PIN! Try again.")
-        st.session_state.entered_pin = ""
-        
-st.stop()
+        else:
+            st.error("Wrong PIN! Try again.")
+            st.session_state.entered_pin = ""
+    st.markdown("</div>", unsafe_allow_html=True)
+    st.stop()
 
 # MAIN ATM MENU
 st.markdown("<h1 class='title'>Farad POS ATM</h1>", unsafe_allow_html=True)
