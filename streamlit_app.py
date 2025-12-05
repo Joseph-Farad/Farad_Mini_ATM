@@ -38,7 +38,6 @@ elif option == "Withdraw Money":
 elif option == "Exit":
     if st.button("End Session"):
         st.session_state.balance = 1000
-        #st.warning("Session ended. Balance reset to ₦1000.")
         st.session_state.session_ended = True
         st.success("Goodbye!")
         st.stop()
