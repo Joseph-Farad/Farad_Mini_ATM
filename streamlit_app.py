@@ -1,13 +1,13 @@
 import streamlit as st
 
-st.title('Farad Mini POS Machine')
+st.title('JOE FARAD MINI ATM')
 
-st.write("Welcome to Farad's POS Menu")
+st.write("Welcome to Joe Farad ATM Menu")
 # --- Initialize balance in session state ---
 if "balance" not in st.session_state:
     st.session_state.balance = 1000
 
-st.subheader("Please Select Option to Continue")
+st.subheader("ATM")
 
 option = st.radio(
     "Choose an action:",
