@@ -13,6 +13,29 @@ if "session_ended" not in st.session_state:
     st.session_state.session_ended = False
 
 # UI Customization
+st.markdown("""
+<style>
+    .title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        color: #0A6EBD;
+    }
+    .sub {
+        text-align: center;
+        font-size: 20px;
+        color: #444;
+    }
+    .atm-box {
+        background-color: #F1F8FF;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #D6E4F0;
+        box-shadow: 2px 2px 10px #d3e3f5;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 
 
 st.subheader("ATM Menu")
