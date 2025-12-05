@@ -70,9 +70,10 @@ def keypad():
     st.markdown(f"<div class='pin-display'>{'•'*len(st.session_state.entered_pin)}</div>", unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns(3)
-        for i, num in enumerate(["1","2","3","4","5","6","7","8","9"]):
-            if i % 3 == 0:
-                col1, col2, col3 = st.columns(3)
+    for i, num in enumerate(["1","2","3","4","5","6","7","8","9"]):
+        if i % 3 == 0:
+            col1, col2, col3 = st.columns(3)
+            
         if col1.button(num, key=f"k{num}", help="Enter PIN", use_container_width=True):
             if len(st.session_state.entered_pin) < 4:
                 st.session_state.entered_pin += num
