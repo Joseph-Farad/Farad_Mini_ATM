@@ -1,9 +1,9 @@
 import streamlit as st
 
 st.set_page_config(page_title="JOE FARAD MINI ATM", page_icon="💳", layout="centered")
-st.title("JOE FARAD MINI ATM")
+st.title("JOE FARAD MINI ATM DEMO")
 
-st.write("Welcome to Joe Farad ATM")
+st.write("Swift and Smooth Transaction!")
 
 # --- Initialize balance in session state ---
 
@@ -126,7 +126,7 @@ if not st.session_state.authenticated:
     st.stop()
 
 # MAIN ATM MENU
-st.markdown("<h1 class='title'>Farad POS ATM</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='title'>YOU WELCOME TO MINI ATM DEMO</h1>", unsafe_allow_html=True)
 st.markdown("<div class='atm-box'>", unsafe_allow_html=True)
 
 menu = st.radio("Please choose an action to continue:", ["Check Balance", "Deposit", "Withdraw", "Change PIN", "Exit"])
