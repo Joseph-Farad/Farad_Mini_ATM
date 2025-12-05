@@ -108,7 +108,7 @@ if not st.session_state.authenticated:
         pin = st.session_state.entered_pin
 
         if not is_valid_pin(pin):
-            st.error("OOps! Invalid PIN PIN, Please try again.")
+            st.error("OOps! Invalid PIN, Please try again.")
             st.session_state.entered_pin = ""
             st.stop()
     if pin == st.session_state.stored_pin:
