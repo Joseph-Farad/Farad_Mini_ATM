@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title('🎈 App Name')
+st.title('Farad Mini POS Machine')
 
-st.write('Hello world!')
+st.write('Welcome to Farad's POS Menu Options')
