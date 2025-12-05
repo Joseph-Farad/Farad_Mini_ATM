@@ -80,7 +80,7 @@ def keypad():
 
         num2 = str(int(num)+1) if num != "9" else None
 
-col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns(3)
     if col1.button("Clear", key="clear", use_container_width=True):
         st.session_state.entered_pin = ""
 
