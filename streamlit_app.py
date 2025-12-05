@@ -1,11 +1,19 @@
 import streamlit as st
 
 st.title('JOE FARAD MINI ATM')
+st.set_page_config(page_title="JOE FARAD MINI ATM", page_icon="💳", layout="centered")
 
 st.write("Welcome to Joe Farad ATM")
 # --- Initialize balance in session state ---
 if "balance" not in st.session_state:
     st.session_state.balance = 1000
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+if "session_ended" not in st.session_state:
+    st.session_state.session_ended = False
+
+# UI Customization
+
 
 st.subheader("ATM Menu")
 
