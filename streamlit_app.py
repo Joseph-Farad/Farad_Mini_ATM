@@ -115,9 +115,9 @@ if not st.session_state.authenticated:
             st.success("PIN correct! Access granted")
             st.session_state.authenticated = True
             st.session_state.entered_pin = ""
-        else:
-            st.error("Wrong PIN! Try again.")
-            st.session_state.entered_pin = ""
+    else:
+        st.error("Wrong PIN! Try again.")
+        st.session_state.entered_pin = ""
 st.stop()
 
 # MAIN ATM MENU
@@ -129,24 +129,12 @@ menu = st.radio("Please choose an action to continue:", ["Check Balance", "Depos
 # Check Balance
 if menu == "Check Balance":
     st.info(f"Your balance is: ₦{st.session_state.balance}")
-
-
-st.subheader("ATM Menu")
-
-option = st.radio(
-    "Please choose an action to continue:",
-    ["Check Balance", "Deposit Money", "Withdraw Money", "Exit"]
-)
-# Check Balance
-if option == "Check Balance":
-    st.info(f"Your current balance is: ₦{st.session_state.balance}")
-
 # Deposit
 elif menu == "Deposit":
     amount = st.number_input("Enter deposit amount:", min_value=0.0)
     if st.button("Deposit"):
         st.session_state.balance += amount
-        st.success(f"Deposited ₦{amount}. You new balance is ₦{st.session_state.balance}")
+        st.success(f"Deposited ₦{amount}. Your new balance is ₦{st.session_state.balance}")
 
 # Withdraw
 elif menu == "Withdraw":
@@ -174,10 +162,26 @@ elif menu == "Change PIN":
 elif menu == "Exit":
     if st.button("End Session"):
         st.session_state.session_ended = True
-        st.success("Thank you for using our ATM. 👋")
+        st.success("Thank you for using ATM. Goodbye!")
         st.stop()
 
 st.markdown("</div>", unsafe_allow_html=True)
+
+
+
+
+
+"""
+st.subheader("ATM Menu")
+
+option = st.radio(
+    "Please choose an action to continue:",
+    ["Check Balance", "Deposit Money", "Withdraw Money", "Exit"]
+)
+# Check Balance
+if option == "Check Balance":
+    st.info(f"Your current balance is: ₦{st.session_state.balance}")
+"""
 
 
 """
