@@ -113,7 +113,7 @@ if not st.session_state.authenticated:
             st.error("OOps! Invalid PIN, Please try again.")
             st.session_state.entered_pin = ""
             st.markdown("</div>", unsafe_allow_html=True)
-            st.stop()
+            #st.stop()
             
         if pin == st.session_state.stored_pin:
             st.success("PIN correct! Access granted")
