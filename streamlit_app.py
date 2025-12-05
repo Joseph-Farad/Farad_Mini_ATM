@@ -115,9 +115,14 @@ if not st.session_state.authenticated:
             st.success("PIN correct! Access granted")
             st.session_state.authenticated = True
             st.session_state.entered_pin = ""
+    if pin == st.session_state.stored_pin:
+        st.success("PIN correct! Access granted ✔")
+        st.session_state.authenticated = True
+        st.session_state.entered_pin = ""
     else:
         st.error("Wrong PIN! Try again.")
         st.session_state.entered_pin = ""
+        
 st.stop()
 
 # MAIN ATM MENU
