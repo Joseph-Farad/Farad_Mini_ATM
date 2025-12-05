@@ -113,7 +113,7 @@ if not st.session_state.authenticated:
             st.error("OOps! Invalid PIN, Please try again.")
             st.session_state.entered_pin = ""
             st.markdown("</div>", unsafe_allow_html=True)
-            #st.stop()
+            st.stop()
             
         if pin == st.session_state.stored_pin:
             st.success("PIN correct! Access granted")
@@ -165,9 +165,10 @@ elif menu == "Change PIN":
             st.error("Invalid PIN! PIN Must be 4 digits.")
 # Exit
 elif menu == "Exit":
-    if st.button("End Session"):
+    if st.button("Exit Session"):
         st.session_state.session_ended = True
         st.success("Thank you for using ATM. Goodbye!")
         st.stop()
 
 st.markdown("</div>", unsafe_allow_html=True)
+
