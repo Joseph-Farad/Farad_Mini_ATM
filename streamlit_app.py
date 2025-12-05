@@ -126,7 +126,7 @@ if not st.session_state.authenticated:
     st.stop()
 
 # MAIN ATM MENU
-st.markdown("<h1 class='title'>YOU WELCOME TO MINI ATM DEMO</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='title'>YOU ARE WELCOME!</h1>", unsafe_allow_html=True)
 st.markdown("<div class='atm-box'>", unsafe_allow_html=True)
 
 menu = st.radio("Please choose an action to continue:", ["Check Balance", "Deposit", "Withdraw", "Change PIN", "Exit"])
